@@ -1,0 +1,41 @@
+# plugins in this file are read every time
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# easy comment out
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# change text between "" , '' , () , and more
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+
+[[plugins]]
+repo = 'miyakogi/seiya.vim'
