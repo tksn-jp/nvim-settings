@@ -1,1 +1,1 @@
-# dotfiles
+# My initial vim settings
