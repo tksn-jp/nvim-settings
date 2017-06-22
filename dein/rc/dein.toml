@@ -7,20 +7,16 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
-# change text between "" , '' , () , and more
+# change "" , '' , () , and more
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
 
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -39,3 +35,6 @@ repo = 'ConradIrwin/vim-bracketed-paste'
 
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
