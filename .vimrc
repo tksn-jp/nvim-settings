@@ -12,7 +12,7 @@ hi clear CursorLine
 autocmd InsertLeave * set nopaste
 
 " when read set nopaste
-autocmd BufRead * set nopaste
+autocmd VimEnter * set nopaste
 
 set foldmethod=indent
 set foldlevel=2
