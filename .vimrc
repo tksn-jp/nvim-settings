@@ -28,6 +28,7 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set paste
+set clipboard+=unnamed
 
 filetype off
 filetype plugin indent off
