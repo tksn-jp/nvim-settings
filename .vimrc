@@ -15,8 +15,9 @@ autocmd InsertLeave * set nopaste
 autocmd VimEnter * set nopaste
 
 set foldmethod=indent
-set foldlevel=2
-set foldcolumn=3
+set foldlevel=3
+set foldnestmax=5
+set foldcolumn=4
 
 set encoding=utf-8
 set fileencodings=utf-8,cp932,iso-2022-jp,euc-jp,sjis
