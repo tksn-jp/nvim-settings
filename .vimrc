@@ -1,5 +1,6 @@
 " ~~~~~~~~~~~~~~~ basic settings ~~~~~~~~~~~~~~~~~
 
+
 " lightline.vim
 set laststatus=2
 set noshowmode
@@ -18,6 +19,9 @@ set foldmethod=indent
 set foldlevel=3
 set foldnestmax=5
 set foldcolumn=4
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 set encoding=utf-8
 set fileencodings=utf-8,cp932,iso-2022-jp,euc-jp,sjis
@@ -81,6 +85,9 @@ if dein#load_state(s:dein_dir)
 	" read and cache TOML
 	call dein#load_toml(s:toml,		{'lazy':0})
 	call dein#load_toml(s:lazy_toml,{'lazy':1})
+	if has('nvim')
+		call dein#load_toml(g:rc_dir . '/neovim.toml', {'lazy':1})
+	endif
 
 	" end settings
 	call dein#end()
@@ -98,3 +105,6 @@ if dein#check_install()
 endif
 
 " ~~~~~~~~~~~~~~~ End dein settings ~~~~~~~~~~~~~~~~~~~~
+
+
+set completeopt=menu
