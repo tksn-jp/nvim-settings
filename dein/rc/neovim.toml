@@ -13,6 +13,9 @@ hook_source = '''
 repo = 'padawan-php/deoplete-padawan'
 depends = ['deoplete.nvim']
 on_ft = 'php'
+hook_post_source = '''
+	call deoplete#sources#padawan#StartServer()
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-clang'
