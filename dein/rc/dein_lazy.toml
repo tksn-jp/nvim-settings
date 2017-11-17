@@ -19,7 +19,7 @@ hook_source = '''
     \   'variables': {
     \       'lang': "ja"
     \   },
-    \   'indentation': '    '
+    \   'indentation': '  '
     \}
 '''
 
