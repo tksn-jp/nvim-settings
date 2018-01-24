@@ -22,7 +22,6 @@ repo = 'zchee/deoplete-clang'
 depends = ['deoplete.nvim']
 on_ft = ['c', 'cpp']
 hook_source = '''
-	" for macOS
 	let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 	let g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/include/clang'
 '''
