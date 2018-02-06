@@ -8,9 +8,7 @@ on_ft = 'html'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = 'html'
-on_ft = 'css'
-on_ft = 'php'
+on_ft = ['html', 'css', 'php']
 on_i = '1'
 hook_source = '''
     let g:user_emmet_mode = 'i'
