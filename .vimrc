@@ -1,5 +1,6 @@
 " ~~~~~~~~~~~~~~~ basic settings ~~~~~~~~~~~~~~~~~
 
+set runtimepath+=~/vim-init-settngs/.vim
 
 " lightline.vim
 set laststatus=2
@@ -12,13 +13,13 @@ set cursorline
 hi clear CursorLine
 autocmd InsertLeave * set nopaste
 
-" when read set nopaste
+" set nopaste when read
 autocmd VimEnter * set nopaste
 
 set foldmethod=indent
 set foldlevel=3
 set foldnestmax=5
-set foldcolumn=4
+set foldcolumn=0
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -26,7 +27,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set encoding=utf-8
 set fileencodings=utf-8,cp932,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
-syntax on
 set mouse=a
 set showmatch
 set autoindent
@@ -34,12 +34,16 @@ set tabstop=4
 set shiftwidth=4
 set paste
 set clipboard+=unnamed
+set expandtab
 
-filetype off
-filetype plugin indent off
 filetype plugin indent on
-syntax on
+filetype indent on
+filetype on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd BufRead,BufNewFile *.html setfiletype html
+autocmd BufRead,BufNewFile *.cas setfiletype casl
+autocmd BufRead,BufNewFile *.js setfiletype javascript
+autocmd FileType php setlocal sw=4 sts=4 ts=4 et
 set completeopt=menu,preview
 
 imap <C-h> <Left>
@@ -52,7 +56,7 @@ nnoremap :tree :NERDTree
 if !has('gui_running')
   set t_Co=256
 endif
-" ~~~~~~~~~~~~~~ End basic settings ~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -94,10 +98,10 @@ if dein#load_state(s:dein_dir)
 	call dein#save_state()
 endif
 
-filetype plugin indent on
 syntax enable
-colorscheme molokai
+colorscheme gruvbox
 let g:seiya_auto_enable=1
+let g:indent_guides_guide_size=1
 
 " install what are installed yet
 if dein#check_install()
