@@ -8,19 +8,24 @@ on_ft = 'html'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html', 'css', 'php']
+on_ft = ['html', 'css']
 on_i = '1'
 hook_source = '''
     let g:user_emmet_mode = 'i'
-    let g:user_emmet_leader_key='<C-E>'
+    let g:user_emmet_leader_key = '<C-E>'
     let g:use_emmet_complete_tag = 1
     let g:user_emmet_settings = {
-    \   'variables': {
-    \       'lang': "ja"
-    \   },
-    \   'indentation': '  '
-    \}
+        'variables': {
+                'lang': "ja"
+        },
+        'indentation': '  '
+    }
 '''
+# hook_post_source = '''
+#     set tabstop&
+#     set shiftwidth&
+#     set softtabstop&
+# '''
 
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
@@ -99,3 +104,13 @@ on_ft = 'rust'
 hook_source = '''
 	let g:rustfmt_autosave = 1
 '''
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'dag/vim-fish'
+on_ft = 'fish'
+
+

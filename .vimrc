@@ -24,26 +24,24 @@ set foldcolumn=0
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+filetype on
+filetype indent on
+filetype plugin on
 set encoding=utf-8
 set fileencodings=utf-8,cp932,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 set mouse=a
 set showmatch
 set autoindent
-set tabstop=4
-set shiftwidth=4
-set paste
 set clipboard+=unnamed
-set expandtab
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
 
-filetype plugin indent on
-filetype indent on
-filetype on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
-autocmd BufRead,BufNewFile *.html setfiletype html
-autocmd BufRead,BufNewFile *.cas setfiletype casl
-autocmd BufRead,BufNewFile *.js setfiletype javascript
-autocmd FileType php setlocal sw=4 sts=4 ts=4 et
+" autocmd BufRead,BufNewFile *.cas setfiletype casl
+autocmd BufRead,BufNewFile *.fish setfiletype fish
+autocmd BufRead,BufNewFile *.php setfiletype php
 set completeopt=menu,preview
 
 imap <C-h> <Left>
@@ -112,3 +110,8 @@ endif
 
 
 set completeopt=menu
+
+" fish option
+if &shell =~# 'fish$'
+    set shell=sh
+endif

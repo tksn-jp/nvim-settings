@@ -13,8 +13,15 @@ hook_source = '''
 repo = 'padawan-php/deoplete-padawan'
 depends = ['deoplete.nvim']
 on_ft = 'php'
+hook_add = '''
+	let g:deoplete#sources#padawan#add_parentheses=1
+'''
 hook_post_source = '''
 	call deoplete#sources#padawan#StartServer()
+	let g:deoplete#sources#padawan#add_parentheses=1
+'''
+hook_source = '''
+	setlocal sw=4 sts=4 ts=4 et
 '''
 
 [[plugins]]
@@ -34,4 +41,46 @@ hook_source = '''
 	let g:deoplete#sources#rust#racer_binary='/Users/shunsuke/.cargo/bin/racer'
 	let g:deoplete#sources#rust#rust_source_path='/Users/shunsuke/rust-src/rust/src'
 	let g:deoplete#sources#rust#show_duplicates=1
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = 'go'
+depends = ['deoplete.nvim']
+hook_source = '''
+    let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
+'''
+
+[[plugins]]
+repo = 'shougo/neco-vim'
+depends = ['deoplete.nvim']
+on_ft = 'vim'
+
+[[plugins]]
+repo = 'fszymanski/deoplete-emoji'
+depends = ['deoplete.nvim']
+on_ft = ['text', 'markdown']
+
+[[plugins]]
+repo = 'ponko2/deoplete-fish'
+depends = ['deoplete.nvim', 'vim-fish']
+on_ft = 'fish'
+
+[[plugins]]
+repo = 'slashmili/alchemist.vim'
+on_ft = 'elixir'
+depends = ['vim-elixir', 'deoplete.vim']
+
+# [[plugins]]
+# repo = 'archSeer/elixir.nvim'
+# on_ft = ['elixir']
+# depends = ['vim-elixir']
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_sign_column_always = 1
+    let g:ale_sign_error = '!!'
+    let g:ale_sign_warning = '=='
 '''

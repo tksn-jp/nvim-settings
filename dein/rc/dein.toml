@@ -30,9 +30,9 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-	let g:airline#extensions#tabline#enabled = 1
-	let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
-	let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+let g:airline#extensions#hunks#enabled = 0
 '''
 
 [[plugins]]
@@ -47,7 +47,7 @@ repo = 'bronson/vim-trailing-whitespace'
 # [[plugins]]
 # repo = 'nathanaelkane/vim-indent-guides'
 # hook_add = '''
-#     let g:indent_guides_enable_on_vim_startup = 1
+#   let g:indent_guides_enable_on_vim_startup = 1
 # 	let g:indent_guides_guide_size = 1
 # 	let g:indent_guides_start_level = 2
 # 	" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
@@ -75,10 +75,17 @@ repo = 'bronson/vim-trailing-whitespace'
 # ---------- color schemes ----------------
 
 [[plugins]]
-repo = 'tomasr/molokai'
-
-[[plugins]]
-repo = 'freeo/vim-kalisi'
-
-[[plugins]]
 repo = 'morhetz/gruvbox'
+
+# ---------- other languages --------------
+
+# for Elixir
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+# window resize
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+let g:winresizer_start_key = '<C-W><C-R>'
+'''
