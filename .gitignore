@@ -1,0 +1,7 @@
+*
+!.gitignore
+!.vimrc
+!.vim/
+!dein/rc/
+!README.md
+!install.sh
