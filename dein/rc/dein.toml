@@ -22,9 +22,6 @@ depends = ['context_filetype.vim']
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
 # [[plugins]]
 # repo = 'itchyny/lightline.vim'
 [[plugins]]
@@ -41,8 +38,11 @@ repo = 'ConradIrwin/vim-bracketed-paste'
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
 
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
+# [[plugins]]
+# repo = 'bronson/vim-trailing-whitespace'
+# hook_add = '''
+# 	let g:extra_whitespace_ignored_filetypes = ['defx']
+# '''
 
 # [[plugins]]
 # repo = 'nathanaelkane/vim-indent-guides'
@@ -71,6 +71,11 @@ repo = 'bronson/vim-trailing-whitespace'
 # 	let g:indentLine_bgcolor_gui = '#FF5F00'
 # '''
 
+# for Git
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 # ---------- color schemes ----------------
 
