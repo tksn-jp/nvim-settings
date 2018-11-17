@@ -1,6 +1,6 @@
 " ~~~~~~~~~~~~~~~ basic settings ~~~~~~~~~~~~~~~~~
-set runtimepath+=$HOME/nvim-settings/.vim
-set runtimepath+=$DOTVIM
+" set runtimepath+=$HOME/nvim-settings/.vim
+set runtimepath+=$HOME/.vim
 
 " lightline.vim
 set laststatus=2
@@ -60,8 +60,8 @@ let g:python_host_prog  = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " directory where plugins will be installed
-" let s:dein_dir = expand('$HOME/nvim-settings/dein')
-let s:dein_dir = expand('$DOTVIM/dein')
+" let s:dein_dir = expand('$HOME/nvim-settings/.vim/dein')
+let s:dein_dir = expand('$HOME/.vim/dein')
 
 " dein.vim
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
