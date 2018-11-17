@@ -1,7 +1,8 @@
 #!/bin/sh
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ./dein/installer.sh
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $SCRIPT_DIR/dein/installer.sh
 sleep 10s
-ln -sf $HOME/vim-settings/.vimrc $HOME/.vimrc
+ln -sf $SCRIPT_DIR/.vimrc $HOME/.vimrc
 if [ `which nvim` ]; then
 	if [ -d $HOME/.config/ ]; then
 		if [ -d $HOME/.config/nvim/ ]; then
@@ -15,4 +16,4 @@ if [ `which nvim` ]; then
 		ln -sf $HOME/.vimrc $HOME/.config/nvim/init.vim
 	fi
 fi
-sh ./dein/installer.sh ./dein/
+sh $SCRIPT_DIR/dein/installer.sh $SCRIPT_DIR/dein/
