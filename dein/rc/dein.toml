@@ -33,49 +33,45 @@ let g:airline#extensions#hunks#enabled = 0
 '''
 
 [[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+	let g:airline_theme = 'simple'
+'''
+
+# status line in tmux generator
+# [[plugins]]
+# repo = 'edkolev/tmuxline.vim'
+# hook_add = '''
+# let g:tmuxline_preset = {
+#       \'a'    : '#S',
+#       \'c'    : ['#(whoami)'],
+#       \'win'  : ['#I', '#W'],
+#       \'cwin' : ['#I', '#W', '#F'],
+#       \'x'    : ['#{battery_percentage} #{battery_icon}', '#{cpu_percentage} #{cpu_icon}'],
+#       \'y'    : ['%a', '%R', '#(ansiweather -l tokyo -w false -h false -p false -a false | cut -d " " -f7,8,9)'],
+#       \'z'    : '#H',
+#       \'options' : {'status-justify':'left'}}
+# let g:tmuxline_theme = 'papercolor'
+# '''
+
+[[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
 
-# [[plugins]]
-# repo = 'bronson/vim-trailing-whitespace'
-# hook_add = '''
-# 	let g:extra_whitespace_ignored_filetypes = ['defx']
-# '''
-
-# [[plugins]]
-# repo = 'nathanaelkane/vim-indent-guides'
-# hook_add = '''
-#   let g:indent_guides_enable_on_vim_startup = 1
-# 	let g:indent_guides_guide_size = 1
-# 	let g:indent_guides_start_level = 2
-# 	" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
-# 	" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
-# '''
-# hook_source = '''
-# 	let g:indent_guides_guide_size = 1
-# 	let g:indent_guides_start_level = 2
-# 	" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
-# 	" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
-# '''
-
-# [[plugins]]
-# repo = 'Yggdroot/indentLine'
-# hook_source = '''
-# 	let g:indentLine_enabled = 1
-# 	let g:indentLine_char = '|'
-# 	let g:indentLine_color_term = 239
-# 	" Background (Vim, GVim)
-# 	let g:indentLine_bgcolor_term = 202
-# 	let g:indentLine_bgcolor_gui = '#FF5F00'
-# '''
 
 # for Git
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
-[[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+	let g:ale_sign_column_always = 1
+	let g:ale_sign_error = 'e>'
+	let g:ale_linters = {'go': ['gofmt']}
+'''
 
 # ---------- color schemes ----------------
 

@@ -6,6 +6,7 @@ set runtimepath+=$HOME/vim-settngs/.vim
 set laststatus=2
 set noshowmode
 
+set cmdheight=2
 set number
 set background=dark
 autocmd ColorScheme * set number
@@ -38,10 +39,7 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-" autocmd BufRead,BufNewFile *.cas setfiletype casl
 autocmd BufRead,BufNewFile *.fish setfiletype fish
-autocmd BufRead,BufNewFile *.php setfiletype php
 set completeopt=menu,preview
 
 imap <C-h> <Left>
@@ -49,11 +47,10 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 imap <C-e> <End>
-nnoremap :tree :NERDTree
 
-if !has('gui_running')
-  set t_Co=256
-endif
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -98,6 +95,7 @@ endif
 
 syntax enable
 colorscheme gruvbox
+hi Defx_git_Untracked guifg=#FF0000
 let g:seiya_auto_enable=1
 let g:indent_guides_guide_size=1
 
@@ -108,7 +106,6 @@ endif
 
 
 " ~~~~~~~~~~~~~~~ End dein settings ~~~~~~~~~~~~~~~~~~~~
-
 
 set completeopt=menu
 

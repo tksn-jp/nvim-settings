@@ -50,6 +50,7 @@ on_ft = 'go'
 depends = ['deoplete.nvim']
 hook_source = '''
     let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
+	let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 '''
 
 [[plugins]]
@@ -70,11 +71,15 @@ on_ft = 'fish'
 [[plugins]]
 repo = 'slashmili/alchemist.vim'
 on_ft = 'elixir'
-depends = ['vim-elixir', 'deoplete.vim']
+depends = ['vim-elixir', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-hook_post_source = '''
+depends = 'defx-git'
+hook_add = '''
+	:command! Tree Defx -split=vertical -winwidth=50 -direction=topleft -columns=git:mark:filename:type `expand('%:p:h')` -search=`expand('%:p')`
+'''
+hook_source = '''
 	autocmd FileType defx call s:defx_my_settings()
 	function! s:defx_my_settings() abort
 	  " Define mappings
@@ -128,3 +133,7 @@ hook_post_source = '''
 	  \ defx#do_action('change_vim_cwd')
 	endfunction
 '''
+
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+depends = 'defx.nvim'
