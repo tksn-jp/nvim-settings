@@ -1,6 +1,6 @@
 " ~~~~~~~~~~~~~~~ basic settings ~~~~~~~~~~~~~~~~~
-let s:script_path = expand('<sfile>:p:h')
-set runtimepath+=$HOME/nvim-settings/.vim
+let s:script_path=expand('<sfile>:p:h')
+set runtimepath+=s:script_path
 
 " lightline.vim
 set laststatus=2
@@ -56,12 +56,15 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 " ~~~~~~~~~~~~~~ dein settings ~~~~~~~~~~~~~~~~~~~~~
+let g:python_host_prog  = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " directory where plugins will be installed
-let s:dein_dir = expand('$HOME/nvim-settings/dein/')
+" let s:dein_dir = expand('$HOME/nvim-settings/dein/')
+let s:dein_dir = s:script_path . '/dein/'
 
 " dein.vim
-let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
+let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim/'
 
 " if dein.vim is not in local, get it from github
 if &runtimepath !~# '/dein.vim'
@@ -77,7 +80,8 @@ if dein#load_state(s:dein_dir)
 
 	" plugin lists in TOML file
 	" make TOML file in advance
-	let g:rc_dir	= expand('$HOME/nvim-settings/dein/rc/')
+	" let g:rc_dir	= expand('$HOME/nvim-settings/dein/rc/')
+	let g:rc_dir	= s:dein_dir . '/rc/'
 	let s:toml		= g:rc_dir . 'dein.toml'
 	let s:lazy_toml	= g:rc_dir . 'dein_lazy.toml'
 
