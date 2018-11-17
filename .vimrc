@@ -1,6 +1,6 @@
 " ~~~~~~~~~~~~~~~ basic settings ~~~~~~~~~~~~~~~~~
-
-set runtimepath+=$HOME/vim-settngs/.vim
+let s:script_path = expand('<sfile>:p:h')
+set runtimepath+=$HOME/nvim-settings/.vim
 
 " lightline.vim
 set laststatus=2
@@ -58,7 +58,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " ~~~~~~~~~~~~~~ dein settings ~~~~~~~~~~~~~~~~~~~~~
 
 " directory where plugins will be installed
-let s:dein_dir = expand('$HOME/vim-settings/dein')
+let s:dein_dir = expand('$HOME/nvim-settings/dein/')
 
 " dein.vim
 let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
@@ -77,15 +77,15 @@ if dein#load_state(s:dein_dir)
 
 	" plugin lists in TOML file
 	" make TOML file in advance
-	let g:rc_dir	= expand('$HOME/vim-settings/dein/rc')
-	let s:toml		= g:rc_dir . '/dein.toml'
-	let s:lazy_toml	= g:rc_dir . '/dein_lazy.toml'
+	let g:rc_dir	= expand('$HOME/nvim-settings/dein/rc/')
+	let s:toml		= g:rc_dir . 'dein.toml'
+	let s:lazy_toml	= g:rc_dir . 'dein_lazy.toml'
 
 	" read and cache TOML
 	call dein#load_toml(s:toml,		{'lazy':0})
 	call dein#load_toml(s:lazy_toml,{'lazy':1})
 	if has('nvim')
-		call dein#load_toml(g:rc_dir . '/neovim.toml', {'lazy':1})
+		call dein#load_toml(g:rc_dir . 'neovim.toml', {'lazy':1})
 	endif
 
 	" end settings
