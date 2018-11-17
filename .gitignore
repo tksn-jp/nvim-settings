@@ -1,7 +1,6 @@
-*
-!.gitignore
-!.vimrc
-!.vim/
-!dein/rc/
-!README.md
-!install.sh
+/deinrepos/
+/dein/repos/
+/dein/.cache/
+/dein/cache_nvim
+/dein/state_nvim.vim
+/dein/installer.sh
