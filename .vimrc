@@ -94,7 +94,6 @@ if dein#load_state(s:dein_dir)
 endif
 
 syntax enable
-colorscheme gruvbox
 hi Defx_git_Untracked guifg=#FF0000
 let g:seiya_auto_enable=1
 let g:indent_guides_guide_size=1
