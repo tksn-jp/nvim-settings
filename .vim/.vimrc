@@ -56,17 +56,14 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 " ~~~~~~~~~~~~~~ dein settings ~~~~~~~~~~~~~~~~~~~~~
-" let g:python_host_prog  = '/usr/local/bin/python2'
-" let g:python3_host_prog = '/usr/local/bin/python3'
-
+"
+let g:python_host_prog = ''
 if system('echo -n $SHELL') =~# '/fish'
 	" for Fish
-	let g:python_host_prog = system('type pyenv > /dev/null ^ /dev/null; and echo -n (pyenv root)"/versions/"(pyenv global | grep python2)"/bin/python"; or echo -n (which python2)')
-	let g:python3_host_prog = system('type pyenv > /dev/null ^ /dev/null; and echo -n (pyenv root)"/versions/"(pyenv global | grep python3)"/bin/python"; or echo -n (which python3)')
+	let g:python3_host_prog = system('echo -n (which python3)')
 else
 	" for Bash/Zsh...
-	let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
-	let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
+	let g:python3_host_prog = system('echo -n $(which python3)')
 endif
 
 " directory where plugins will be installed
@@ -110,7 +107,6 @@ endif
 syntax enable
 hi Defx_git_Untracked guifg=#FF0000
 let g:seiya_auto_enable=1
-let g:indent_guides_guide_size=1
 
 " install what are installed yet
 if dein#check_install()
