@@ -41,7 +41,7 @@ set tabstop=4
 
 autocmd BufRead,BufNewFile *.fish setfiletype fish
 set completeopt=menu,preview
-
+'
 imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
@@ -56,8 +56,18 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 " ~~~~~~~~~~~~~~ dein settings ~~~~~~~~~~~~~~~~~~~~~
-let g:python_host_prog  = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:python_host_prog  = '/usr/local/bin/python2'
+" let g:python3_host_prog = '/usr/local/bin/python3'
+
+if system('echo -n $SHELL') =~# '/fish'
+	" for Fish
+	let g:python_host_prog = system('type pyenv > /dev/null ^ /dev/null; and echo -n (pyenv root)"/versions/"(pyenv global | grep python2)"/bin/python"; or echo -n (which python2)')
+	let g:python3_host_prog = system('type pyenv > /dev/null ^ /dev/null; and echo -n (pyenv root)"/versions/"(pyenv global | grep python3)"/bin/python"; or echo -n (which python3)')
+else
+	" for Bash/Zsh...
+	let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
+	let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
+endif
 
 " directory where plugins will be installed
 " let s:dein_dir = expand('$HOME/nvim-settings/.vim/dein')
