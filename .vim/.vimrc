@@ -106,7 +106,6 @@ endif
 
 syntax enable
 hi Defx_git_Untracked guifg=#FF0000
-let g:seiya_auto_enable=1
 
 " install what are installed yet
 if dein#check_install()

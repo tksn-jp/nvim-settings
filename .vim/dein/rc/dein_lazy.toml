@@ -10,15 +10,20 @@ on_ft = 'html'
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css']
 on_i = '1'
-hook_source = '''
+hook_post_source = '''
     let g:user_emmet_mode = 'i'
     let g:user_emmet_leader_key = '<C-E>'
     let g:use_emmet_complete_tag = 1
     let g:user_emmet_settings = {
-        'variables': {
+        'variables' : {
                 'lang': "ja"
         },
-        'indentation': '  '
+		'html' :  {
+			'indentation' : '  '
+		},
+		'php' : {
+			'indentation' : '    '
+		}
     }
 '''
 # hook_post_source = '''

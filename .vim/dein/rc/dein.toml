@@ -27,15 +27,16 @@ repo = 'Townk/vim-autoclose'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
-let g:airline#extensions#hunks#enabled = 0
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+	let g:airline#extensions#hunks#enabled = 0
 '''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+depends = ['vim-airline']
 hook_add = '''
-	let g:airline_theme = 'simple'
+	let g:airline_theme = 'jellybeans'
 '''
 
 # status line in tmux generator
@@ -56,10 +57,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
-
-[[plugins]]
-repo = 'miyakogi/seiya.vim'
-
 
 # for Git
 [[plugins]]
