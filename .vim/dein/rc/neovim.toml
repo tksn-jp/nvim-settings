@@ -13,15 +13,25 @@ hook_source = '''
 repo = 'padawan-php/deoplete-padawan'
 depends = ['deoplete.nvim']
 on_ft = 'php'
-hook_add = '''
+hook_source = '''
 	let g:deoplete#sources#padawan#add_parentheses=1
+	let g:deoplete#skip_chars = ['$']
 '''
 hook_post_source = '''
 	call deoplete#sources#padawan#StartServer()
 	setlocal sw=4 sts=4 ts=4 et
+	command! PadawanStart call deoplete#sources#padawan#StartServer()
+	command! PadawanStop call deoplete#sources#padawan#StopServer()
+	command! PadawanRestart call deoplete#sources#padawan#RestartServer()
+	command! PadawanInstall call deoplete#sources#padawan#InstallServer()
+	command! PadawanUpdate call deoplete#sources#padawan#UpdatePadawan()
+	command! -bang PadawanGenerate call deoplete#sources#padawan#Generate(<bang>0)
 '''
 hook_post_update = '''
 	call deoplete#sources#padawan#InstallServer()
+'''
+hook_done_update = '''
+	call deoplete#sources#padawan#UpdateServer()
 '''
 
 [[plugins]]
