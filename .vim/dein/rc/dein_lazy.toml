@@ -15,16 +15,19 @@ hook_post_source = '''
     let g:user_emmet_leader_key = '<C-E>'
     let g:use_emmet_complete_tag = 1
     let g:user_emmet_settings = {
-        'variables' : {
-                'lang': "ja"
-        },
-		'html' :  {
-			'indentation' : '  '
-		},
-		'php' : {
-			'indentation' : '    '
-		}
-    }
+	\	'variables' : {
+	\		'lang': "ja"
+	\	},
+	\	'html' :  {
+	\		'indentation' : '  '
+	\	},
+	\	'php' : {
+	\		'indentation' : '    '
+	\	},
+	\  'custom_expands1' : {
+    \    '^\%(lorem\|lipsum\)\(\d*\)$' : function('emmet#lorem#ja#expand')
+    \  }
+	\}
 '''
 # hook_post_source = '''
 #     set tabstop&
