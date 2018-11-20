@@ -51,7 +51,7 @@ repo = 'carlitux/deoplete-ternjs'
 on_ft = 'js'
 hook_source = '''
 " Set bin if you have many instalations
-let g:deoplete#sources#ternjs#tern_bin = '/Users/shunsuke/.nodebrew/current/bin/tern'
+let g:deoplete#sources#ternjs#tern_bin = '$HOME/.nodebrew/current/bin/tern'
 let g:deoplete#sources#ternjs#timeout = 1
 
 " Whether to include the types of the completions in the result data. Default: 0
