@@ -93,3 +93,9 @@ repo = 'simeji/winresizer'
 hook_add = '''
 let g:winresizer_start_key = '<C-W><C-R>'
 '''
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
+hook_add = '''
+	let g:sonictemplate_vim_template_dir = ['~/.vim/template']
+'''

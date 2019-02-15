@@ -131,4 +131,10 @@ hook_source = '''
 repo = 'dag/vim-fish'
 on_ft = 'fish'
 
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = ['markdown', 'md', 'text', 'rst']
+hook_source = '''
+	let g:table_mode_corner='|'
+'''
 

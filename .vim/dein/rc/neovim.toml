@@ -86,9 +86,9 @@ depends = ['vim-elixir', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-depends = 'defx-git'
 hook_add = '''
 	:command! Tree Defx -split=vertical -winwidth=50 -direction=topleft -columns=git:mark:filename:type `expand('%:p:h')` -search=`expand('%:p')`
+	:command! Dex Defx `expand('%:p:h')` -search=`expand('%:p')`
 '''
 hook_source = '''
 	autocmd FileType defx call s:defx_my_settings()
